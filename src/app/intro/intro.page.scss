@@ -1,0 +1,35 @@
+ion-content {
+    --background: red;
+    
+  }
+  
+  ion-slides {
+    background-color: var(--dan-color-2);
+    height: 100%;
+    max-width: 800px;
+  }
+  .swiper-slide {
+    display: block;
+    background-color: var(--dan-color-primary);
+    padding: 20px 0px 20px 0px;
+  }
+  
+  ion-slide > h1,h2 {
+    color: white;
+  }
+  
+  ion-slide > p {
+    font-style: oblique;
+    font-size: 15px;
+    border: groove;
+    border-color: var(--dan-color-2);
+    border-radius: 20px;
+    padding: 15px 10px 15px 10px;
+    margin: 20px 10px 20px 10px;
+  }
+  
+  ion-slide > ion-icon[name="close"] {
+    float: right;
+    color: var(--ion-color-danger);
+    font-size: 40px;
+  }

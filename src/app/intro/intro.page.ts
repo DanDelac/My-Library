@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {  Router } from '@angular/router';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-intro',
@@ -22,7 +23,7 @@ export class IntroPage implements OnInit {
       subtitle: "La vuelta al mundo en ochenta días",
       img: "https://resumen.club/wp-content/uploads/2020/09/la-vuelta-al-mundo-en-80-dias.jpg",
       description: "El señor Phileas Fogg, un misterioso y solitario caballero inglés, abandonará su vida disciplinada para cumplir una apuesta con los miembros del Reform Club"
-    },
+    },  
     {
       title: "Genero: Fantastica",
       subtitle: "El señor de los Anillos",
@@ -43,9 +44,11 @@ export class IntroPage implements OnInit {
     }   
   ]
   
-  constructor(private router: Router) { }
+  constructor(private router: Router, private storage: Storage ) { }
+  
   finish(){
-    this.router.navigateByUrl("/home")
+    this.storage.set("isIntroShowed", true);
+    this.router.navigateByUrl("/home");
   }
   ngOnInit() {
   }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {  Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { Storage } from '@ionic/storage';
 
 @Component({
@@ -9,7 +9,6 @@ import { Storage } from '@ionic/storage';
 })
 export class IntroPage implements OnInit {
 
-  
   slideOpt = {
     initialSlide: 1, //slide inicial (primero) [0,1,2,3]
     slidesPerView: 1, //configuramos un slide por vista
@@ -43,9 +42,10 @@ export class IntroPage implements OnInit {
       description: "La novela comienza cuando Watson se instala en Londres para recuperarse de una herida que sufrió mientras trabajaba como médico militar en la Segunda Guerra Anglo-Afgana y de una enfermedad que contrae posteriormente. "
     }   
   ]
-  
-  constructor(private router: Router, private storage: Storage ) { }
-  
+
+  constructor(private router: Router, private storage: Storage) { 
+  }
+
   finish(){
     this.storage.set("isIntroShowed", true);
     this.router.navigateByUrl("/home");

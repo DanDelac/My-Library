@@ -1,0 +1,18 @@
+16/01/23
+Buenos días, según lo que entendí es que, antes de ver el Home si o si toca ver el intro y después de 
+ver el intro y darle en el icono de la x, te manda para el Home y ya no puedes ver la intro, esto último 
+fue lo que faltó y dejo para nosotros implementar
+17/01/23
+*utilizar al menos dos utilidades de CSS https://ionicframework.com/docs/layout/css-utilities
+*completar los valitation messages para password y mostrar los mensajes cuando haya error 
+*agregar un boton en login para enviarme a la pagina de registro 
+*personalizar nuestra vista de login
+18/01/23
+*agregar el input para seleccioar documento
+*agergar estilos al registro
+*agregar validators al registro 
+*campo password para login y register tipo password
+19/01/23
+*login debe hacerse con las credenciales registradas
+*para comparar nuestra contraseña registrada desencriptar con la funcion atoa()
+*en el registro el campo carrera debe ser igual a tipo de documento

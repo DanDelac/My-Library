@@ -1,22 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { Storage } from '@ionic/storage';
-
-@Component({
-  selector: 'app-intro',
-  templateUrl: './intro.page.html',
-  styleUrls: ['./intro.page.scss'],
-})
-export class IntroPage implements OnInit {
-
-  slideOpt = {
-    initialSlide: 1, //slide inicial (primero) [0,1,2,3]
-    slidesPerView: 1, //configuramos un slide por vista
-    centerSlides: true, //que las slides enten centradas
-    speed: 400 //velocidad movimiento de los slides
-  }
-
-  slides = [
+		---intro.ts
+slides = [
     {
       title: " Genero: Aventura",
       subtitle: "La vuelta al mundo en ochenta días",
@@ -43,14 +26,75 @@ export class IntroPage implements OnInit {
     }   
   ]
 
-  constructor(private router: Router, private storage: Storage) { 
+ion-content {
+    --background: red;
+    
+  }
+		---intro.scss  
+  ion-slides {
+    background-color: var(--dan-color-2);
+    height: 100%;
+    max-width: 800px;
+  }
+  .swiper-slide {
+    display: block;
+    background-color: var(--dan-color-primary);
+    padding: 20px 0px 20px 0px;
+  }
+  
+  ion-slide > h1,h2 {
+    color: white;
+  }
+  
+  ion-slide > p {
+    font-style: oblique;
+    font-size: 15px;
+    border: groove;
+    border-color: var(--dan-color-2);
+    border-radius: 20px;
+    padding: 15px 10px 15px 10px;
+    margin: 20px 10px 20px 10px;
+  }
+  
+  ion-slide > ion-icon[name="close"] {
+    float: right;
+    color: var(--ion-color-danger);
+    font-size: 40px;
   }
 
-  finish(){
-    this.storage.set("isIntroShowed", true);
-    this.router.navigateByUrl("menu/home");
-  }
-  ngOnInit() {
+		--variables--
+/** My variables**/
+  --the-second-color:#E8A9F7 ;  
+  --the-best-color: #37FA03 ;
+  --dan-color-primary: #9C91B6;
+  --dan-color-secundary:  #A00F22;
+  --dan-color-1: #257D14;
+  --dan-color-2: #510F0F;
+  --dan-color-3: #76A0D8;
+
+
+		--register.html
+<ion-button (click)="goToLogin()">
+        Back
+      </ion-button>
+
+		--register.ts
+goToLogin(){
+    this.navCtrl.navigateBack("/login");
   }
 
-}
+		--login.html
+
+<ion-button 
+shape="round"
+color="warning"
+type="submit"
+(click)="goToRegister()">
+  Registrarse
+</ion-button>
+
+		--login--
+
+  goToRegister(){
+    this.navCtrl.navigateRoot("/register");
+  }

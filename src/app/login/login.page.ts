@@ -16,6 +16,10 @@ export class LoginPage implements OnInit {
     email: [
       { type: "required", message: "El Email es Obligatorio" },
       { type: "pattern", message: "Tu email no es valido" }
+    ],
+    password: [
+      { type: "required", message: "La Contraseña es Obligatorio"},
+      { type: "minLength", message: "Contraseña mayor a 5 dígitos" }
     ]
   }
 
@@ -53,7 +57,7 @@ export class LoginPage implements OnInit {
     this.auth.loginUser(credentials).then( res => {
       this.errorMessage = "";
       this.storage.set("isUserLoggedIn", true);
-      this.navCtrl.navigateForward("/home");
+      this.navCtrl.navigateForward("/menu/home");
     }).catch(err => {
       this.errorMessage = err
     });

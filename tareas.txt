@@ -16,3 +16,21 @@ fue lo que faltó y dejo para nosotros implementar
 *login debe hacerse con las credenciales registradas
 *para comparar nuestra contraseña registrada desencriptar con la funcion atoa()
 *en el registro el campo carrera debe ser igual a tipo de documento
+
+24/01/23
+https://librarypca.fly.dev/authors
+https://librarypca.fly.dev/books
+curl --location --request GET 'https://librarypca.fly.dev/authors' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "author": {
+        "name": "Charles Dickens",
+        "followers": 170,
+        "genres": "{suspenso,romance,fantasia}",
+        "photo": "https://cadenaser.com/resizer/KdDaTobLsTMPLuaotcDkFjI6t6c=/1200x900/filters:format(jpg):quality(70)/cloudfront-eu-central-1.images.arcpublishing.com/prisaradio/73OM5G7AGFMALMKBYD2R4WUDSA.jpg",
+        "popularity": 4
+    }
+}'
+
+*consumir servicio de getBooksAuthor para mostrar la lista de libros de un author 
+*agregar css a nuestro modal para personalizar la lista de libros

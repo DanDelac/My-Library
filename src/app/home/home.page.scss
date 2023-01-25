@@ -1,4 +1,10 @@
 ion-avatar{
-    max-width: 150px;
     height: 150px;
+    width: 100%;
+   // --border-radius: 0;
+    
+}
+ion-avatar img{
+    width: 90px;
+    height: 90px;
 }

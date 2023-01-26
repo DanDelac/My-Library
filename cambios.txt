@@ -98,3 +98,8 @@ type="submit"
   goToRegister(){
     this.navCtrl.navigateRoot("/register");
   }
+
+
+		--COMANDOS
+ionic generate page (NOMBRE)
+ionic generate (NOMBRE) (UBICACIÓN)

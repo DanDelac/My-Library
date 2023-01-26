@@ -1,18 +1,34 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons>
+    <ion-buttons class="booksA">
       <ion-button slot="end" (click)="closeModal()">
         Cerrar
       </ion-button>
     </ion-buttons>
-    <ion-title>{{author.name}}</ion-title>
+    <div class="ion-text-center">
+      <ion-title>{{author.name}}</ion-title>
+    </div>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-<ion-list padding *ngFor="let book of books">
+    <ion-list padding *ngFor="let book of books">
       <ion-item>
-          <span>{{book.name}}</span>
-     </ion-item>
+         <ion-avatar class="size-logo">
+            <img src="{{book.cover}}" alt="Smiley face" height="100px" width="100px"/>
+        </ion-avatar>
+        <ion-item-divider>  
+          <ion-label>
+            <p>Titulo: {{book.name}}</p>
+          </ion-label>
+        </ion-item-divider>
+        <ion-item lines="none"></ion-item>
+        <ion-item-divider>
+          <ion-label>
+            <p>Editorial: {{book.editorial}}</p>
+          </ion-label>
+        </ion-item-divider>
+    </ion-item>
+    <ion-item lines="none"></ion-item>
 </ion-list>
 </ion-content>

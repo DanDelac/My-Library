@@ -60,7 +60,7 @@ export class RegisterPage implements OnInit {
         "",
         Validators.compose([
           Validators.required,
-          Validators.pattern("[a-zA-Z]")
+          Validators.pattern("[a-zA-Z].*")
         ])
       ),
       document_type: new FormControl(
@@ -73,7 +73,8 @@ export class RegisterPage implements OnInit {
         "",
         Validators.compose([
           Validators.required,
-          Validators.pattern("[a-zA-Z]")
+          Validators.required,
+          Validators.minLength(8)
         ])
       ),
       career: new FormControl(
@@ -107,7 +108,7 @@ export class RegisterPage implements OnInit {
   }
 
   registerUser(register_form: any){
-    console.log(register_form)
+    console.log(register_form);
     this.authenticate.registerUser(register_form).then(() => {
       this.navCtrl.navigateForward("/login");
     });

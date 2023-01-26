@@ -34,3 +34,7 @@ curl --location --request GET 'https://librarypca.fly.dev/authors' \
 
 *consumir servicio de getBooksAuthor para mostrar la lista de libros de un author 
 *agregar css a nuestro modal para personalizar la lista de libros
+
+25/01/23
+https://librarypca.fly.dev/signup
+https://librarypca.fly.dev/books

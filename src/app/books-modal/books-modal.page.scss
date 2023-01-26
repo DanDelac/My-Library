@@ -1,3 +1,14 @@
-content{
-    background: aquamarine;
+ion-header{
+    --background: black;
+    --text-color: white;
+}
+ion-content {
+    --background: black;   
+}
+.size-logo img{
+    width: 50px;
+    height: 50px;
+    margin: 10px auto;
+    display: block;
+    --border-radius: 0;
 }

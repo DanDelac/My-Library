@@ -23,4 +23,8 @@ export class MenuPage implements OnInit {
     this.navCtrl.navigateRoot("/login");
   }
 
+  goToAuthors(){
+    this.navCtrl.navigateForward("/menu/authors");
+  }
+
 }

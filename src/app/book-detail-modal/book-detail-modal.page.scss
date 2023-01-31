@@ -1,0 +1,27 @@
+.cover {
+    max-height: 200px;
+    margin: 0 auto;
+    display: block;
+}
+ion-content{
+    --background: var(--ion-color-dark);
+  }
+.ion-content{
+    --background: var(--ion-color-dark);
+  }
+  ion-list{
+    --background: var(--ion-color-dark);
+  }
+  ion-list > ion-item{
+    --background: var(--ion-color-dark);
+    color: white;
+  }
+  ion-content > h1{
+     color:white ;
+   }
+   ion-content > p{
+      color:white ;
+    }
+    ion-content > ion-grid{
+       color:white ;
+     }

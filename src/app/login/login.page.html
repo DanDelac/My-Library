@@ -1,17 +1,20 @@
 <ion-content class="login">
-  
+  <div class="login">
+  <div class="title">
   <ion-text class="ion-text-center">
     <h4>LOGIN</h4>
   </ion-text>
   <figure class="size-logo">
     <img src="./assets/logo.png"/>
   </figure>
-  <form [formGroup]="loginForm" (ngSubmit)="loginUser(loginForm.value)">
+</div>
+  <form class="form" [formGroup]="loginForm" (ngSubmit)="loginUser(loginForm.value)">
+    <div class="email">
     <ion-item fill="solid">
       <ion-label position="floating">Email</ion-label>
       <ion-input formControlName="email"></ion-input>
     </ion-item>    
-<div class="ion-text-right">
+  <div class="ion-text-right">
   <ng-container *ngFor="let validation of validation_message.email">   
     <div *ngIf="
     loginForm.get('email')?.hasError(validation.type) && 
@@ -22,7 +25,8 @@
   </div>
   </ng-container>
 </div>
-
+</div>
+  <div class="pass">
   <ion-item fill="solid">
     <ion-label position="floating">Contraseña</ion-label>
     <ion-input formControlName="password"></ion-input>
@@ -39,6 +43,7 @@
     </div>
     </ng-container>
   </div>
+</div>
 
 
 <ion-button 
@@ -50,21 +55,16 @@ type="submit">
 </ion-button>
 
 
-<ion-button 
-shape="round"
-color="warning"
-type="submit"
-(click)="goToRegister()">
-  Registrarse
-</ion-button>
-
   </form>
+
+  <ion-button 
+  shape="round"
+  color="warning"
+  type="submit"
+  (click)="goToRegister()"
+  class="button-1">
+    Registrarse
+  </ion-button>
 {{errorMessage}}
+</div>
 </ion-content>
-<ion-footer>
-  <ion-toolbar>
-    <ion-text>
-      <h6>Terminos y condiciones</h6>
-    </ion-text>
-  </ion-toolbar>
-</ion-footer>

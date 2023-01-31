@@ -1,53 +1,73 @@
-import { NgFor, NgForOf, NgForOfContext } from '@angular/common';
 import { Injectable } from '@angular/core';
 import { Storage } from '@ionic/storage';
-import { stdin } from 'process';
-import { stringify } from 'querystring';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticateService {
-  constructor(private storage: Storage) { }
 
-  loginUser(credentials: any){
-    return new Promise((accept, reject) =>{
-    this.storage.forEach(element => {   
-      //console.log(element);
-      console.log("ingreso: ",credentials.email);
-      console.log("ingreso: ",credentials.password);
-      if(element.password!=null && element.email!=null){
-        console.log("cache email: ",(element.email));
-        console.log("cache pass: ",atob(element.password));
-      if ( credentials.email == element.email && credentials.password == atob(element.password)) // && btoa(credentials.password) == "123456" 
-      {
-        accept("Login Exitoso");
-      } else {
-        if(credentials.password != element.password && credentials.email==element.email){
-        reject("Contraseña incorecta");}
-        reject("Usuario NO registrado");
-      }
-    }
-      });      
-    });
-  }
-  loginUserReg(userData: any){
-    
-  }
+  urlServer = "https://librarypca.fly.dev/";
+  httpHeaders = { headers: new HttpHeaders({"Content-Type": "application/json"}) };
 
-  /*loginUser(credentials: any, userData: any){
+  constructor(
+    private storage: Storage,
+    private http: HttpClient
+    ) { }
+
+  loginUserLocal(credentials: any){
     return new Promise((accept, reject) =>{
-      if ( credentials.email == userData.email && btoa(credentials.password) == userData.password ) 
+      if ( credentials.email == "andrea@gmail.com" && credentials.password == "123456" )
       {
         accept("Login Exitoso");
       } else {
         reject("Login Fallido");
       }
     });
-  }*/
+  }
 
-  registerUser(userData: any){
+  registerUserLocal(userData: any){
     userData.password = btoa(userData.password);
     return this.storage.set("user", userData);
   }
+
+  loginUser(credentials: any){
+    return new Promise( (accept, reject) => {
+      let params = {
+        "user": credentials
+      }
+      this.http.post(`${this.urlServer}login`, params, this.httpHeaders).subscribe( (data: any) => {
+        if (data.status == "OK") {
+          accept(data);
+        }else{
+          reject(data.errors)
+        }
+      }, (error) => {
+        reject("Error en Login")
+      })
+    })
+  }
+
+  registerUser(userData: any){
+    let params = {
+      "user": userData
+    }
+    return new Promise( (accept, reject) => {
+      this.http.post(`${this.urlServer}signup`,params, this.httpHeaders).subscribe((data: any) => {
+        if (data.status == "OK"){
+          accept(data.msg);
+          
+        }else{
+          reject(data.errors)
+        }
+      },(error) => {
+        reject("Error al intentar registrarse")
+      })
+    })
+  }
+
+  logoutUser(userData:any){
+    return false;
+  }
+
 }

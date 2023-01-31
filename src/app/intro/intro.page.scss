@@ -1,7 +1,6 @@
-ion-content {
-    --background: red;
-    
-  }
+ion-content{
+  --background: var(--ion-color-dark);
+}
   
   ion-slides {
     background-color: var(--dan-color-2);
@@ -10,7 +9,7 @@ ion-content {
   }
   .swiper-slide {
     display: block;
-    background-color: var(--dan-color-primary);
+    background: var(--ion-color-dark);
     padding: 20px 0px 20px 0px;
   }
   
@@ -20,16 +19,25 @@ ion-content {
   
   ion-slide > p {
     font-style: oblique;
-    font-size: 15px;
+    font-size: 13px;
     border: groove;
-    border-color: var(--dan-color-2);
+    border-color: var(--ion-color-primary-contrast);
     border-radius: 20px;
     padding: 15px 10px 15px 10px;
     margin: 20px 10px 20px 10px;
+    height: 90px;
+    width: 300px;
+    color: white;
+  }
+  ion-slide > img {
+    width: 500px;
+    height: 350px;
+    padding: 15px 10px 15px 10px;
+    margin: 0px 10px 0px 10px;
   }
   
   ion-slide > ion-icon[name="close"] {
     float: right;
     color: var(--ion-color-danger);
-    font-size: 40px;
+    font-size: 20px;
   }

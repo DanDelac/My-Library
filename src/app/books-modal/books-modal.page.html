@@ -1,10 +1,8 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons class="booksA">
-      <ion-button slot="end" (click)="closeModal()">
-        Cerrar
-      </ion-button>
-    </ion-buttons>
+      <ion-buttons slot="start" (click)="closeModal()">
+        <ion-button >Volver</ion-button>
+      </ion-buttons>
     <div class="ion-text-center">
       <ion-title>{{author.name}}</ion-title>
     </div>
@@ -12,23 +10,21 @@
 </ion-header>
 
 <ion-content>
-    <ion-list padding *ngFor="let book of books">
-      <ion-item>
-         <ion-avatar class="size-logo">
-            <img src="{{book.cover}}" alt="Smiley face" height="100px" width="100px"/>
-        </ion-avatar>
-        <ion-item-divider>  
-          <ion-label>
-            <p>Titulo: {{book.name}}</p>
-          </ion-label>
-        </ion-item-divider>
-        <ion-item lines="none"></ion-item>
-        <ion-item-divider>
-          <ion-label>
-            <p>Editorial: {{book.editorial}}</p>
-          </ion-label>
-        </ion-item-divider>
-    </ion-item>
-    <ion-item lines="none"></ion-item>
+  <div class="ion-content">
+    <ion-list padding *ngFor="let book of books" (click)="showBook(book)">
+      <ion-row>
+        <ion-col size="3">
+          <ion-avatar>
+            <img src="{{book.cover}}"/>
+          </ion-avatar>        
+        </ion-col>
+        <ion-col size="9">
+            <p>Titulo:    {{book.name}}</p>
+            <p>Genero:    {{book.genres}}</p>   
+            <p>Publicado: {{book.published_date}}</p>   
+            <p>Editorial: {{book.editorial}}</p>            
+        </ion-col>
+      </ion-row>
 </ion-list>
+</div>
 </ion-content>

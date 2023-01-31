@@ -1,14 +1,36 @@
-ion-header{
-    --background: black;
-    --text-color: white;
+ion-content{
+    --background: var(--ion-color-dark);
 }
-ion-content {
-    --background: black;   
-}
-.size-logo img{
-    width: 50px;
-    height: 50px;
-    margin: 10px auto;
+
+.cover {
+    max-height: 200px;
+    margin: 0 auto;
     display: block;
-    --border-radius: 0;
+}
+ion-content{
+    --background: var(--ion-color-dark);
+}
+ion-list{   
+    background: var(--ion-color-dark);
+    height: auto;
+}
+ion-row{
+    margin: 0px 20px 0px 20px;
+}
+ion-col{
+    width: 500px;
+    height: auto;
+    border-radius: 0%;
+}
+ion-avatar > img {    
+    width:auto;
+    height: auto;
+    border-radius: 0px;
+}
+p{
+    color: white;
+    font-size: 15px;
+    margin: 0px 5px 0px 10px;
+    margin: 0px 20px 0px 20px;
+
 }

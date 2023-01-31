@@ -13,9 +13,25 @@ const routes: Routes = [
         loadChildren: () => import('../home/home.module').then( m => m.HomePageModule)
       },
       {
+        path: 'books-modal',
+        loadChildren: () => import('../books-modal/books-modal.module').then( m => m.BooksModalPageModule)
+      },
+      {
         path: 'authors',
         loadChildren: () => import('../authors/authors.module').then( m => m.AuthorsPageModule)
       },
+      {
+        path: 'books',
+        loadChildren: () => import('../books/books.module').then( m => m.BooksPageModule)
+      },
+      {
+        path: 'favorite-books',
+        loadChildren: () => import('../favorite-books/favorite-books.module').then( m => m.FavoriteBooksPageModule)
+      },
+      {
+        path: 'top-books',
+        loadChildren: () => import('../top-books/top-books.module').then( m => m.TopBooksPageModule)
+      }
     ]
   }
 ];

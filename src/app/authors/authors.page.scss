@@ -1,0 +1,49 @@
+ion-content{
+    --background: var(--ion-color-dark);
+}
+.cover {
+    max-height: 200px;
+    margin: 0 auto;
+    display: block;
+}
+ion-list{    
+    background: var(--ion-color-dark);
+    margin: 0px 15px 0px 15px;
+    color: white;
+}
+ion-row{
+    margin:0px 10px 0px 10px
+}
+ion-item{    
+    --background: var(--ion-color-dark);
+    color: white;
+}
+
+ion-card {
+    width: auto;
+    margin: 0;
+    padding: 0;
+    height: auto;
+}
+ion-card ion-card-header {
+    padding: 10px 10px;
+    background: var(--ion-color-tertiary-tint);
+}
+
+ion-card ion-card-content {
+    background: var(--ion-color-tertiary);
+    width: 380px;
+    height: 100px;
+    padding: 0px 0px 0px 15px;
+}
+img{
+    height: 100px;
+    max-height: 100px;
+    width: 80px;
+    max-width: 80px;
+}
+p{
+    width: auto;
+    height: auto;
+
+}

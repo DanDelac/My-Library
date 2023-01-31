@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController, NavParams } from '@ionic/angular';
 import { LibraryService } from '../services/library.service';
+import { BookDetailModalPage } from '../book-detail-modal/book-detail-modal.page';
 
 @Component({
   selector: 'app-books-modal',
@@ -35,7 +36,15 @@ export class BooksModalPage implements OnInit {
       this.books = res;
     })
     }
-
+    async showBook(book: any){
+      const modal = await this.modalController.create({
+        component: BookDetailModalPage,
+        componentProps: {
+          book: book
+        }
+      });
+      return await modal.present();
+    }
   closeModal(){
     this.modalController.dismiss();
   }

@@ -1,25 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-
-import { BookDetailModalPage } from '../book-detail-modal/book-detail-modal.page';
 import { LibraryService } from '../services/library.service';
+import { BookDetailModalPage } from '../book-detail-modal/book-detail-modal.page';
+
 @Component({
-  selector: 'app-books',
-  templateUrl: './books.page.html',
-  styleUrls: ['./books.page.scss'],
+  selector: 'app-top-books',
+  templateUrl: './top-books.page.html',
+  styleUrls: ['./top-books.page.scss'],
 })
-export class BooksPage implements OnInit {
-
-  books: any;
-
+export class TopBooksPage implements OnInit {
+  books:any;
   constructor(private libraryService: LibraryService,
-    private modalController:ModalController) { }
+    private modalController: ModalController) { }
 
   ngOnInit() {
-    this.libraryService.getBooks().then(books => {
+    this.libraryService.getTopBooks().then(books =>{
       this.books = books;
     })
   }
+
   async showBook(book: any){
     const modal = await this.modalController.create({
       component: BookDetailModalPage,

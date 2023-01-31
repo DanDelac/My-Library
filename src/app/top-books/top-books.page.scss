@@ -1,0 +1,35 @@
+ion-content{
+    --background: var(--ion-color-dark);
+    margin: 5px 5px 0px 5px;
+}
+ion-list{    
+    background: var(--ion-color-dark);
+    color: white;
+}
+ion-list > ion-item{    
+    --background: var(--ion-color-dark);
+    color: white;
+}
+ion-row{
+    width: 450px;
+    max-height: 30px;
+}
+ion-col{
+    max-height: 30px;
+}
+.ion-content{
+    width: 350px;
+    max-height: 30px;
+}
+ion-icon{
+    color: red;
+    --background: red;
+}
+ion-inner{
+    width: 100px;
+    max-height: 30px;
+}
+p{
+    width: auto;
+    max-height: 30px;
+}

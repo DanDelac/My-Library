@@ -1,10 +1,42 @@
+ion-content{
+    --background: var(--ion-color-dark);
+    //--background: var(--ion-color-danger-contrast);
+    padding: 0px 20px 10px 20px;
+}
+.title{
+    color: wheat;
+    margin: 40px 0px 10px 0px;
+}
 .size-logo img{
     max-width:  100px;
     margin: 0 auto;
     display: block;
+    color: --dan-color-secundary;
 }
-.size-button{
-    max-width:  200px;
-    margin: 0 auto;
+.mensaje{
+    color: var(--ion-color-medium-tint);
+    font-size: 20px;
+    
+}
+form{
+    padding: 0px 20px 30px 20px;
+    margin: 15px;
+}
+ion-button{
     display: block;
+    padding: 0px 7px 0px 7px;
+}
+ion-item{
+    padding: 0px 20px 10px 20px;
+    margin: 5px;
+    border-radius: 20px;
+}
+ion-item{
+    background: white;
+    margin: 5px;
+    height: 60px;
+}
+ion-button{
+    height: 50px;
+    margin: 20px ;
 }

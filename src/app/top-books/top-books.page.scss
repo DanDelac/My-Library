@@ -15,13 +15,15 @@ ion-row{
     max-height: 30px;
 }
 ion-col{
-    max-height: 30px;
+    padding: 0px 5px 0px 5px;
+    max-height: 40px;
 }
 .ion-content{
     width: 350px;
-    max-height: 30px;
+    max-height: 40px;
 }
 ion-icon{
+    padding: 0px 5px 0px 5px;
     color: red;
     --background: red;
 }
@@ -29,7 +31,8 @@ ion-inner{
     width: 100px;
     max-height: 30px;
 }
-p{
-    width: auto;
+.p{
+    padding: 0px 5px 0px 5px;
+    max-width: 150px;
     max-height: 30px;
 }
